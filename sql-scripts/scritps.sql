@@ -1,0 +1,12 @@
+CREATE TABLE Users(
+    firstname TEXT NOT NULL,
+    lastname TEXT NOT NULL,
+    id INTEGER NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE Items(
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    ownerid INTEGER NOT NULL,
+    FOREIGN KEY (ownerid) REFERENCES Users(id)
+);
